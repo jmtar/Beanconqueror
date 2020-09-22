@@ -75,7 +75,7 @@ npm install @ionic-native/globalization
 
 
 ##App version
-ionic cordova plugin add cordova-plugin-app-version
+ionic cordova plugin add corinAppBrowserdova-plugin-app-version
 npm install @ionic-native/app-version
 
 
