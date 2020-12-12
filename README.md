@@ -116,6 +116,7 @@ ionic cordova build android
 ## Issues with iOS
 ```
 1. pod install / pod install --repo-update
+or pod repo update
 -> this needs to be done in the ios platform
 
 if this doesn't help:
@@ -136,6 +137,20 @@ DEBUG_INFORMATION_FORMAT
 
 ```
 
+##Actual Pod issue
+```
+1. Add this to the pod file
+post_install do |pi|
+   pi.pods_project.targets.each do |t|
+       t.build_configurations.each do |bc|
+           bc.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+       end
+   end
+end
+2. Goto platform/ios and run pod install
+https://github.com/CocoaPods/CocoaPods/issues/9884
+
+
 ## Debug analytics on firebase
 ```adb shell setprop debug.firebase.analytics.app Beanconqueror
 adb shell setprop debug.firebase.analytics.app com.beanconqueror.app
@@ -149,4 +164,9 @@ adb shell setprop debug.firebase.analytics.app .none.
 ### Check outdated dependencies
 ```
 npm outdated
+```
+
+### check outdated plugins
+```
+cordova-check-plugins
 ```

@@ -325,6 +325,17 @@ export class Brew implements IBrew {
     }
     return undefined;
   }
+  
+  public isArchived(): boolean {
+    const bean: Bean = this.getBean();
+    const mill: Mill = this.getMill();
+    const preparation: Preparation = this.getPreparation();
+    
+    if (bean.finished || mill.finished || preparation.finished) {
+      return true;
+    }
+    return false;
+  }
 
 
 

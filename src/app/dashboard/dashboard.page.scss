@@ -3,7 +3,7 @@
 
   ion-card.dashboard {
     text-align:center;
-    padding: 6px;
+    padding: 12px;
     height:100%;
 
     ion-card-title {
@@ -12,9 +12,9 @@
       font-weight: bold;
     }
     ion-card-subtitle {
-      font-weight:bold;
       color: var(--ion-text-color);
       font-size:14px;
+      margin-top:0px;
     }
   }
 

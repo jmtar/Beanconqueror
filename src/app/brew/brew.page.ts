@@ -45,9 +45,7 @@ export class BrewPage implements OnInit {
   public settings: Settings;
   public query: string = '';
 
-  public customSelectSheetOptions: any = {
-    cssClass: 'select-break-text'
-  };
+
   @ViewChild('openScroll', {read: IonVirtualScroll, static: false}) public openScroll: IonVirtualScroll;
   @ViewChild('archivedScroll', {read: IonVirtualScroll, static: false}) public archivedScroll: IonVirtualScroll;
 
@@ -117,7 +115,7 @@ export class BrewPage implements OnInit {
       {
         this.openScroll.checkRange(0,this.openBrewsView.length);
       }
-    },25);
+    },75);
   }
 
 
