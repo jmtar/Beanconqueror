@@ -30,8 +30,6 @@ export class BeansEditComponent implements OnInit {
   public beanRoastingTypeEnum = BEAN_ROASTING_TYPE_ENUM;
   @ViewChild('beanStars', {read: NgxStarsComponent, static: false}) public beanStars: NgxStarsComponent;
 
-  // Needed for the rating element, if we set the initial stars before loading, we cant change it anymore.
-  public viewLoaded: boolean = false;
 
   @Input() private bean: IBean;
   @ViewChild('photoSlides', {static: false}) public photoSlides: IonSlides;
@@ -41,7 +39,7 @@ export class BeansEditComponent implements OnInit {
   public roasterResults: string[] = [];
   // Preset on start, else if value is filled the popup will be shown
   public ignoreNextChange: boolean = false;
-
+  public visibleIndex: any = {};
   constructor (private readonly navParams: NavParams,
                private readonly modalController: ModalController,
                private readonly uiBeanStorage: UIBeanStorage,
@@ -53,7 +51,6 @@ export class BeansEditComponent implements OnInit {
                private readonly datePicker: DatePicker,
                private readonly translate: TranslateService,
                private readonly platform: Platform) {
-    // this.data.roastingDate = new Date().toISOString();
   }
 
   public ionViewWillEnter(): void {
@@ -206,6 +203,13 @@ export class BeansEditComponent implements OnInit {
         }
 
       );
+    }
+  }
+  public beanMixChanged() {
+    if (this.data.beanMix !== BEAN_MIX_ENUM.BLEND) {
+      const beanInfo:IBeanInformation = this.data.bean_information[0];
+      this.data.bean_information = [];
+      this.data.bean_information.push(beanInfo);
     }
   }
 }

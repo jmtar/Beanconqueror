@@ -99,9 +99,13 @@ import {DefaultCustomParameterComponent} from '../../components/parameter/defaul
 import {SortCustomParameterComponent} from '../../components/parameter/sort-custom-parameter/sort-custom-parameter.component';
 import {ManageCustomParameterComponent} from '../../components/parameter/manage-custom-parameter/manage-custom-parameter.component';
 import {BeanFilterComponent} from '../beans/bean-filter/bean-filter.component';
+import {BeansDetailComponent} from '../beans/beans-detail/beans-detail.component';
 
 @NgModule({
-  declarations: [SettingsPage, StatisticPage, HomePage, BrewParameterPage, DashboardPage, BeansPage, HelperPage, BeansAddComponent, BeansEditComponent, AboutComponent,
+  declarations: [SettingsPage, StatisticPage, HomePage, BrewParameterPage, DashboardPage, BeansPage, HelperPage, BeansAddComponent,
+    BeansEditComponent,
+    BeansDetailComponent,
+    AboutComponent,
     ContactComponent,
     InfoComponent,
     PreparationAddTypeComponent,
@@ -133,7 +137,10 @@ import {BeanFilterComponent} from '../beans/bean-filter/bean-filter.component';
     PreparationModalSelectComponent,
     PreparationPopoverActionsComponent, TimerComponent,DefaultCustomParameterComponent, SortCustomParameterComponent,ManageCustomParameterComponent, BrewTimerComponent],
   entryComponents: [
-    SettingsPage, StatisticPage, HomePage, BrewParameterPage, DashboardPage, BeansPage, HelperPage, BeansAddComponent, BeansEditComponent, BrewFilterComponent, BeanFilterComponent, PreparationInformationCardComponent, MillInformationCardComponent, AboutComponent,
+    SettingsPage, StatisticPage, HomePage, BrewParameterPage, DashboardPage, BeansPage, HelperPage, BeansAddComponent,
+    BeansEditComponent,
+    BeansDetailComponent,
+    BrewFilterComponent, BeanFilterComponent, PreparationInformationCardComponent, MillInformationCardComponent, AboutComponent,
     ContactComponent,
     InfoComponent,
     PreparationAddTypeComponent,
@@ -192,7 +199,9 @@ import {BeanFilterComponent} from '../beans/bean-filter/bean-filter.component';
     Geolocation
   ],
 
-  exports: [SettingsPage, StatisticPage, HomePage, BrewParameterPage, BeansPage, HelperPage, BeansAddComponent, BeansEditComponent, AboutComponent,
+  exports: [SettingsPage, StatisticPage, HomePage, BrewParameterPage, BeansPage, HelperPage, BeansAddComponent, BeansEditComponent,
+    BeansDetailComponent,
+    AboutComponent,
     ContactComponent,
     InfoComponent,
     PreparationAddTypeComponent,
